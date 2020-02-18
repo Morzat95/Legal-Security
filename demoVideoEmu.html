@@ -7,8 +7,6 @@
     AFRAME.registerComponent('cursor-listener', {
         init: function () {
 
-            let self = this.el;
-
             this.el.addEventListener('click', function (evt) {
 
                 playPause('goles-messi');
@@ -17,7 +15,7 @@
         }
     });
 
-    var isPlaying = false;
+    var isPlaying = true;
 
     function playPause(id) {
         let elem = document.getElementById(id);
@@ -35,16 +33,13 @@
     <a-scene embedded arjs="debugUIEnabled: false; sourceType: image; sourceUrl: pattern-QR.png" cursor="rayOrigin: mouse">
 
         <a-assets>
-            <video id="goles-messi" loop="true" src="Los 50 Goles de Lionel Messi con la Selección Argentina.mp4"></video>
+            <video id="goles-messi" autoplay loop="true" src="Los 50 Goles de Lionel Messi con la Selección Argentina.mp4"></video>
         </a-assets>
 
         <a-marker type="pattern" url="pattern-QR.patt">
             <!-- Using the asset management system. -->
             <a-video src="#goles-messi" width="1" height="0.5625" position="0 0 0" rotation="-90 0 0" cursor-listener></a-video>
 
-            <!-- <a-box scale="0.5 0.2 0.1" position="0 0.083 0.428" rotation = "-90 0 0" color="green" cursor-listener>
-                <a-text value="Play/Pause" position="-0.48 0 0.55" scale="0.8 1 1"></a-text>
-            </a-box> -->
         </a-marker>
   
         <a-entity id="rig" position="0 0 0">
