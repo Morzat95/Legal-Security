@@ -23,7 +23,7 @@
 </script>
   <body style="margin : 0px; overflow: hidden;">
     
-    <a-scene embedded arjs="debugUIEnabled: false; sourceType: webcam;" cursor="rayOrigin: mouse">
+    <a-scene embedded arjs="debugUIEnabled: false; sourceType: image; sourceUrl: pattern-QR.png" cursor="rayOrigin: mouse">
 
         <a-assets>
             <video id="goles-messi" autoplay loop="true" src="Los 50 Goles de Lionel Messi con la Selección Argentina.mp4"></video>
@@ -35,7 +35,7 @@
         </a-marker>
   
       <a-entity camera>
-          <a-cursor color="yellow"></a-cursor>
+          <a-cursor></a-cursor>
       </a-entity>
     </a-scene>
   </body>
