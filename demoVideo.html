@@ -1,4 +1,3 @@
-
 <!doctype HTML>
 <html>
 <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
@@ -20,6 +19,19 @@
             });
         }
     });
+
+    var isPlaying = false;
+
+    function playPause(id) {
+        let elem = document.getElementById(id);
+
+        if (!isPlaying)
+            elem.play();
+        else
+            elem.pause();
+
+        isPlaying = !isPlaying;
+    }
 </script>
   <body style="margin : 0px; overflow: hidden;">
     
@@ -31,12 +43,13 @@
 
         <a-marker type="pattern" url="pattern-QR.patt">
             <!-- Using the asset management system. -->
-            <a-video src="#goles-messi" width="16" height="9" position="0 0 0" cursor-listener></a-video>
+            <a-video src="#goles-messi" width="1" height="0.5625" position="0 0 0" rotation="-90 0 0" cursor-listener></a-video>
         </a-marker>
   
-      <a-entity camera>
-          <a-cursor color="yellow"></a-cursor>
-      </a-entity>
+      <a-entity camera></a-entity>
     </a-scene>
+
+    <button style="width: 100px; height: 50px; position: absolute; top: 65%; left: 45%;" onclick="playPause('goles-messi');">Play/Pause</button>
+
   </body>
 </html>
