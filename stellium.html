@@ -12,14 +12,12 @@
         <a-asset-item id="stellium-mtl" src="LOGO_STELLIUM_obj.mtl"></a-asset-item>
       </a-assets>
       
-      <a-marker preset="pattern" type="pattern" url="pattern-QR.patt">
-        <a-obj-model src="#stellium-obj" mtl="#stellium-mtl" scale="0.05 0.05 0.05" rotation="-90 0 0"></a-obj-model>
+      <a-marker preset="pattern" type="pattern" url="pattern-QR.patt" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+          <a-obj-model src="#stellium-obj" mtl="#stellium-mtl" scale="0.05 0.05 0.05"></a-obj-model>
         <!-- <a-obj-model src="LOGO_STELLIUM_obj.obj" mtl="LOGO_STELLIUM_obj.mtl"></a-obj-model> -->
       </a-marker >
   
-      <a-entity camera>
-        <a-cursor color="yellow"></a-cursor>
-      </a-entity>
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
