@@ -1,0 +1,23 @@
+
+<!doctype HTML>
+<html>
+  <script src="aframe-v1.0.4.min.js"></script>
+  <script src="aframe-ar.min.js"></script>
+  <body style="margin : 0px; overflow: hidden;">
+    
+    <a-scene embedded arjs="debugUIEnabled: false; sourceType: image; sourceUrl: pattern-QR.png">
+
+      <a-assets>
+        <a-asset-item id="stellium-obj" src="LOGO_STELLIUM_obj.obj"></a-asset-item>
+        <a-asset-item id="stellium-mtl" src="LOGO_STELLIUM_obj.mtl"></a-asset-item>
+      </a-assets>
+      
+      <a-marker preset="pattern" type="pattern" url="pattern-QR.patt">
+        <a-obj-model src="#stellium-obj" mtl="#stellium-mtl" scale="0.05 0.05 0.05" rotation="-90 0 0" position="0 -5 0"></a-obj-model>
+        <!-- <a-obj-model src="LOGO_STELLIUM_obj.obj" mtl="LOGO_STELLIUM_obj.mtl"></a-obj-model> -->
+      </a-marker >
+  
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
